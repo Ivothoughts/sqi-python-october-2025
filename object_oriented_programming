@@ -1,0 +1,42 @@
+class Line:
+    def __init__(self, coor1, coor2):
+        self.x1, self.y1 = coor1
+        self.x2, self.y2 = coor2
+
+    def distance(self):
+        return ((self.x2 - self.x1)**2 + (self.y2 - self.y1)**2) ** 0.5 #sqrt((x2 - x1)^2 + (y2 - y1)^2)^1/2
+
+    def slope(self):
+        if self.x2 == self.x1:
+            return "undefined" 
+        return (self.y2 - self.y1) / (self.x2 - self.x1) # y2 - y1 / x2 - x1
+    
+
+coordinatel = (3,2)
+coordinate2 = (8,10)
+
+line_1 = Line(coordinatel, coordinate2)
+
+print(line_1.distance())  # 9.433981132056603
+print(line_1.slope()) 
+
+
+#volume = pi * radius square * height
+#area = 2 * pi * radius * height + 2 * pi * radius square
+
+
+class Cylinder:
+    PI = 22 /  7
+    def __init__(self, height=1, radius=1):
+        self.height = height
+        self.radius = radius
+
+    def volume(self):
+        return self.PI * (self.radius ** 2) * self.height
+
+    def surface_area(self):
+        return (2 * self.PI * self.radius * self.height) + (2 * self.PI * (self.radius ** 2))
+    
+cylinder = Cylinder(2,3)
+print(round(cylinder.volume(), 2))  # 56.52
+print(round(cylinder.surface_area()), 1)  # 94.2
