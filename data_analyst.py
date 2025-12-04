@@ -58,3 +58,17 @@ def extract_data():
 
 
 extract_data()
+
+def print_result():
+    with open("emails.txt", "r", encoding="utf-8") as email_file:
+        contents = email_file.readlines()
+
+    print(contents)
+
+    with open("phone_numbers.txt", "r", encoding="utf-8") as phone_file:
+        phone_numbers = phone_file.readlines()
+    
+    print(phone_numbers)
+
+
+print_result()
